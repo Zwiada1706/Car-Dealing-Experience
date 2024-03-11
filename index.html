@@ -10,52 +10,68 @@
 </head>
 <body>
     <header class="header" id="header">
-        <nav class="nav container"></nav>
+        <nav class="nav container">
+
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="#">Travel</a>
+                <a href="#">About Us</a>
+                <a href="#">Services</a>
+                <a href="#">Team</a>
+                <a href="#">Reviews</a>
+              </div>
+              
+              <!-- Use any element to open the sidenav -->
+            <span onclick="openNav()" class="nav__menu">
+                <i class="ri-menu-line"></i>
+            </span>
             <a href="#" class="nav__logo">  
                 Travel With Us.
             </a>
 
-            <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list">
-                    <li class="nav__item">
-                        <a href="#" class="nav__item">Travel</a>
-                    </li>
-
-                    <li class="nav__item">
-                        <a href="#" class="nav__item">About Us</a>
-                    </li>
-
-                    <li class="nav__item">
-                        <a href="#" class="nav__item">Trips</a>
-                    </li>
-
-                    <li class="nav__item">
-                        <a href="#" class="nav__item">Team</a>
-                    </li>
-
-                    <li class="nav__item">
-                        <a href="#" class="nav__item">Reviews</a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="nav__actions">
-                    <button class="nav__dropdown">
-                        <i class="ri-menu-line"></i>
-                    </button>
-                    <div class="nav__droptown">
-                        <a href="" class="nav__droplist">Actions</a>
-                        <a href="" class="nav__droplist">Actions</a>
-                       <a href="" class="nav__droplist">Actions</a>
-                    </div>
-
-                    <div class="nav__contact">
-                        <a href="" class="nav__contact-us">
-                            Contact Us
-                        </a>
-                    </div>
-            </div>
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <i class="ri-menu-line"></i>
+                </button>
+                <div class="dropdown-content">
+                  <a href="#">Post A Review</a>
+                  <a href="#">Blog</a>
+                  <a href="#">FAQ's</a>
+                </div>
+            </div>  
+            
+            <a href="" class="nav__contact">    
+                Contact Us
+            </a>
         </nav>
     </header>
+
+    <main class="main">
+        <section class="home section">
+            <div class="home__content grid">
+                <div class="home__data grid">
+                    <h1 class="section__title-1">
+                        <span>Tourists</span>,
+                        <br>
+                        with a different style of travel
+                    </h1>
+
+                    <h2 class="section__title">
+                        Just because you are not there does not mean you won't get there.
+                    </h2>
+
+                    <div class="home__contact">
+                        <a href="" class="hm__contact">Our Services</a>
+                        <a href="" class="hm__trips">View Our Trips ></a>
+                    </div>
+                </div>
+
+                <div class="home__blob">
+                    <img src="images/cabin.jpg" alt="image">
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
 </body>
 </html>
