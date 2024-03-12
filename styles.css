@@ -1,370 +1,221 @@
-/*=====================================  GOOGLE FONTS  ========================================*/
-
-@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&display=swap');
-
-/*===================================== VARIABLE CSS ========================================*/
-  /*=============== BASE ===============*/
-  
-  :root {
-    --header-height: 3.5rem;
-  
-    /*========== Colors ==========*/
-    /*Color mode HSL(hue, saturation, lightness)*/
-    --first-color: hsl(0, 98%, 50%);
-    --first-color-alt: hsl(0, 90%, 50%);
-    --first-color-light: hsl(0, 39%, 80%);
-    --white-color: hsl(0, 0%, 100%);
-
-    --black-color: hsl(0, 0%, 0%);
-    --black-color-light: hsl(0, 0%, 40%);
-
-
-    --title-color: hsl(255, 24%, 16%);
-    --text-color: hsl(0, 8%, 45%);
-    --text-color-light: hsl(0, 8%, 80%);
-    --body-color: hsl(0, 0%, 100%);
-    --container-color: hsl(0, 0%, 100%);
-    --shadow-color: rgb(196, 156, 156);
-  
-    /*========== Font and typography ==========*/
-    /*.5rem = 8px | 1rem = 16px ...*/
-    --body-font: "Bai Jamjuree", sans-serif;
-    --biggest-font-size: 2.5rem;
-    --h1-font-size: 1.75rem;
-    --h2-font-size: 1.25rem;
-    --h3-font-size: 1.125rem;
-    --normal-font-size: .938rem;
-    --small-font-size: .813rem;
-    --smaller-font-size: .75rem;
-  
-    /*========== Font weight ==========*/
-    --font-regular: 400;
-    --font-medium: 500;
-    --font-semi-bold: 600;
-    --font-bold: 700;
-  
-    /*========== z index ==========*/
-    --z-tooltip: 10;
-    --z-fixed: 100;
-    --z-modal: 1000;
-  }
-  
-  /*========== Responsive typography ==========*/
-  @media screen and (min-width: 1150px) {
-    :root {
-      --biggest-font-size: 4.5rem;
-      --h1-font-size: 3rem;
-      --h2-font-size: 1.5rem;
-      --h3-font-size: 1.25rem;
-      --normal-font-size: 1rem;
-      --small-font-size: .875rem;
-      --smaller-font-size: .813rem;
-    }
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-  /*======================Reusable Styles===========================*/
-  
-  * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    
-  }
-  
-  html {
-    scroll-behavior: smooth;
-  }
-  
-  input, body, textarea, button {
-    font-family: var(--body-font);
-    font-size: var(--normal-font-size);
-    background-color: var(--body-color);
-    color: var(--text-color);
-    transition: background-color .4s; /* for dark mode */
-  }
-  
-  h1, h2, h3, h4 {
-    color: var(--title-color);
-    font-weight: var(--font-bold);
-  }
-  
-  ul {
-    list-style: none;
-  }
-  
-  a {
-    text-decoration: none;
-  }
-  
-  img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-  }
-  .container {
-    max-width: 1120px;
-    margin-inline: 1.5rem;
-  }
-  
-  .grid {
-    display: grid;
-    gap: 1.5rem;
-  }
-  
-  .section {
-    padding-block: 5rem 1rem;
-  }
-  
-  .section__title-1, 
-  .section__title-2 {
-    position: relative;
-    font-size: var(--h1-font-size);
-    width: max-content;
-    margin: .75rem auto 2rem;
-  }
-  
-  .section__title-1 span, 
-  .section__title-2 span {
-    z-index: 5;
-    position: relative;
-  }
 
-  .section__title {
-    font-size: var(--h1-font-size);
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-
-  .main {
-    overflow: hidden;
-  }
-
-
-  /* header & Navbar */
-
-.header{
-    position: fixed;
-    width: 100%;
-    left: 0;
-    top: 0;
-    background-color: rgb(11, 104, 11);
-    transition: background-color .4s;
+.container {
+  max-width: 1120px;
+  margin-inline: 1.5rem;
 }
 
-.nav{
-    height: var(--header-height);
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.grid {
+  display: grid;
+  gap: 1.5rem;
 }
+
+.section {
+  padding-block: 5rem 1rem;
+}
+
+.section__title-1, 
+.section__title-2 {
+  position: relative;
+  font-size: var(--h1-font-size);
+  width: max-content;
+  margin: .75rem auto 2rem;
+}
+
+.section__title-1 span, 
+.section__title-2 span {
+  z-index: 5;
+  position: relative;
+}
+
+.section__title {
+  font-size: var(--h1-font-size);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+
+.navbar{
+  position: fixed;
+  height: 4rem;
+  display: flex;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(135deg,purple, red);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+margin-bottom: 50px;
+}
+
 
 .nav__logo{
-    text-decoration: none;
-    font-size: 1.25rem;
-    font-weight: var(--font-semi-bold);
-    color: var(--white-color);
-}
-.dropbtn {
-    background-color: #04AA6D;
-    color: white;
-    padding: 10px;
-    font-size: 6px;
-    border: none;
-    border-radius: 0px;
-    margin-right: 0.5rem;
-}
-
-.dropbtn:hover{
-    background-color: black;
-    cursor: pointer;
-}
-
-.dropbtn i{
-    font-size: 1.25rem;
-}
-  
-  /* The container <div> - needed to position the dropdown content */
-  .dropdown {
-    position: relative;
-    justify-content: space-between;
-    display: inline-block;
-    right: 0;
-  }
-  
-  /* Dropdown Content (Hidden by Default) */
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  
-  /* Links inside the dropdown */
-  .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
-  
-  /* Change color of dropdown links on hover */
-  .dropdown-content a:hover {
-    right: 2rem;
-    background-color: #ddd;
-    cursor: pointer;
-}
-  
-  /* Show the dropdown menu on hover */
-  .dropdown:hover .dropdown-content {
-    display: block;
-    cursor: pointer;
-}
-  
-  /* Change the background color of the dropdown button when the dropdown content is shown */
-  .dropdown:hover .nav__dropdown {
-    background-color: #3e8e41;
-    background-color: black;
-    cursor: pointer;
-}
-
-.nav__logo:hover{
-    color: black;
-}
-
-.nav__contact {
-    margin-left: 0;
-    background-color: #04AA6D;
-    color: white;
-    padding: 6px;
-    font-size: 16px;
-    border-radius: 2rem;
-    border: none;
-}
-
-.nav__contact:hover{
-    background-color: black;
-}
-
-.sidenav {
-  height: 100%; /* 100% Full-height */
-  position: absolute;
-  width: 0; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
-  left: 0;
-  background-color: #111; /* Black*/
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-}
-
-/* The navigation menu links */
-.sidenav a {
-  padding: 8px 8px 8px 32px;
+  margin-left: 20px;
+  font-size: 1.25rem;
+  font-weight: bold;
   text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
+  color: #fff;
+} 
+
+.nav__toggle,
+.nav__close {
+  display: inline-flex;
+  font-size: 1.25rem;
+  cursor: pointer;
 }
 
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
-  color: #f1f1f1;
+.nav__toggle{
+  margin-right: 20px;
+  color: hsl(0, 0%, 100%);
 }
 
-/* Position and style the close button (top right corner) */
-.sidenav .closebtn {
+.nav__close{
+  font-size: 2rem;
+  color: whitesmoke;
+}
+
+@media screen and (max-width: 1150px){
+  .nav__menu{
+      position: fixed;
+      top: -100%;
+      left: 0;
+      background-color: rgb(40, 35, 35);
+      width: 100%;
+      box-shadow: 0 12px 24px var(--shadow-color);
+      padding-block: 5rem 4rem;
+      transition: top .4s;
+  }
+
+}
+
+
+.nav__list{
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.5rem;
+  text-align: center;
+}
+
+.nav__link{
+  text-decoration: none;
+  color: var(--title-color);
+  font-size: 2rem;
+  font-weight: 400;
+  transition: color .4s;
+}
+
+.nav__link:hover{
+  color: #ff5945;
+  color: whitesmoke;
+}
+
+.nav__close{
+  position: absolute;
+  top: 1.15rem;
+  right: 1.5rem;
+}
+
+/*Show Menu*/
+
+.show-menu{
+  top: 0;
+}
+
+.home__container{
+  padding-top: 4.5rem;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  margin-top: 20px;
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
   position: absolute;
   top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
 }
 
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-/* #main {
-  transition: margin-left .5s;
-  padding: 20px;
-} */
-
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
-  .nav__menu{
-    color: white;
-    font-size: 1.25rem;
-  }
-
-  .nav__menu:hover{
-    cursor: pointer;
-    color: black;
-  }
-
-.home{
-    background-color: #3e8e41;
-
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
 }
 
-.home__content{
-    display: flex;
-    flex-wrap: wrap;
-    position: relative;
-    justify-content: center;
-    align-items: center;
+.active, .dot:hover {
+  background-color: #717171;
 }
 
-.home__contact{
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 100%;
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
 }
 
-.hm__contact{
-    padding: 16px;
-    border-radius:  25px;
-    font-size: 1rem;
-    color: white;
-    border: #e8d2b9 solid 0.5px;
-    background-color: #04AA6D;
-}
-
-.hm__trips{
-    padding: 16px;
-    border-radius:  25px;
-    font-size: 1rem;
-    color: white;
-    background-color: transparent;
-}
-
-.hm__trips:hover{
-    text-decoration: underline;
-}
-
-.home__blob{
-    max-width: 1000%;
-    height: auto;
-}
-
-.section__title{
-    font-size: 1rem;
-    font-weight: var(--normal-font-size);
-    color: var(--white-color);
-}
-
-.section__title-1{
-    color: var(--white-color);
-}
-
-.section__title-1 span{
-    color: black;
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
 }
 
